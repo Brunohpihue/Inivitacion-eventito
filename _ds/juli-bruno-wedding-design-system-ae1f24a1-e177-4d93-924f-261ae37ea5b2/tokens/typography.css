@@ -1,0 +1,42 @@
+/* ==========================================================================
+   TYPE TOKENS
+   Three families, each with one job:
+     --font-sans   Mulish  — UI, nav, labels, RSVP forms, body copy (sub for
+                             FreightNeo Pro)
+     --font-serif  Lora    — headlines, vows/poem excerpts, "reserva la
+                             fecha" formal moments
+     --font-script Caveat  — playful asides, signatures, small callouts
+                             (used sparingly — never for body paragraphs)
+   ========================================================================== */
+
+:root {
+  --font-sans:   'Mulish', -apple-system, 'Segoe UI', sans-serif;
+  --font-serif:  'Lora', Georgia, 'Times New Roman', serif;
+  --font-script: 'Caveat', cursive;
+
+  /* type scale — 1920x1080 slide-safe, also fine at web sizes */
+  --text-display: 76px;   /* hero couple names */
+  --text-h1:      52px;   /* section titles */
+  --text-h2:      36px;   /* card / block titles */
+  --text-h3:      26px;   /* sub-headings */
+  --text-lead:    22px;   /* intro paragraphs */
+  --text-body:    18px;   /* body copy */
+  --text-small:   15px;   /* captions, meta */
+  --text-eyebrow: 14px;   /* label / kicker, tracked out */
+
+  --leading-tight:  1.1;
+  --leading-snug:   1.3;
+  --leading-normal: 1.55;
+  --leading-loose:  1.75;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:  0.08em;
+  --tracking-widest: 0.16em;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;
+  --weight-bold:    700;
+  --weight-black:   800;
+}

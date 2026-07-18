@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juli &amp; Bruno — ¡Nos casamos!</title>
+
+<!-- Metaetiquetas para vista previa en WhatsApp y Redes Sociales (Open Graph) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brunohpihue.github.io/Inivitacion-eventito/">
+<meta property="og:title" content="Juli &amp; Bruno — ¡Nos casamos!">
+<meta property="og:description" content="1 de noviembre, 2026 · Te esperamos para celebrar juntos. Confirmá tu lugar.">
+<meta property="og:image" content="https://brunohpihue.github.io/Inivitacion-eventito/assets/illustrations/couple-with-dogs-lineart-transparent.png">
+
+<!-- Metaetiquetas Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://brunohpihue.github.io/Inivitacion-eventito/">
+<meta property="twitter:title" content="Juli &amp; Bruno — ¡Nos casamos!">
+<meta property="twitter:description" content="1 de noviembre, 2026 · Te esperamos para celebrar juntos. Confirmá tu lugar.">
+<meta property="twitter:image" content="https://brunohpihue.github.io/Inivitacion-eventito/assets/illustrations/couple-with-dogs-lineart-transparent.png">
+
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Wedding Landing Page" description="Full one-page wedding site: hero, countdown, date, address, gift info, dress code, RSVP" -->
+<helmet>
+  <script src="./ds-base.js"></script>
+</helmet>
+
+<div style="background:#F2EBDC; min-height:100vh; position:relative;">
+
+  <!-- INTRO: apertura con ramas -->
+  <sc-if value="{{ showOverlay }}" hint-placeholder-val="{{ true }}">
+    <div style="position:fixed; inset:0; z-index:9999; background:#59562C; display:flex; align-items:center; justify-content:center; overflow:hidden; transition:opacity 0.9s ease; opacity:{{ overlayOpacity }};">
+
+      <video ref="{{ setVideoRef }}" src="assets/video/hands-parting-branches.mp4" muted playsInline preload="auto" onEnded="{{ onVideoEnd }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:opacity 1s ease; opacity:{{ videoOpacity }};"></video>
+
+      <div style="position:relative; z-index:2; text-align:center; padding:24px; transition:opacity 0.5s ease; opacity:{{ introContentOpacity }}; pointer-events:{{ introPointerEvents }};">
+        <img src="assets/illustrations/wedding-rings-lineart.png" alt="" style="width:64px; margin-bottom:20px; filter:brightness(0) invert(1); opacity:0.85;">
+        <div style="font-family:'Mulish',sans-serif; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#F2B4AE; font-weight:600; margin-bottom:14px;">Nos casamos</div>
+        <h1 style="font-family:'Lora',serif; font-size:clamp(40px,7vw,72px); color:#F2EBDC; margin:0 0 32px; line-height:1.1;">Juli &amp; Bruno</h1>
+        <button onClick="{{ onOpen }}" style="font-family:'Mulish',sans-serif; font-weight:700; font-size:16px; color:#59562C; background:#F2EBDC; padding:16px 40px; border-radius:999px; border:none; cursor:pointer; letter-spacing:0.02em;">Abrir la invitación</button>
+      </div>
+
+      <sc-if value="{{ opening }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ onSkip }}" style="position:absolute; z-index:3; bottom:32px; right:32px; font-family:'Mulish',sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#F2EBDC; background:rgba(89,86,44,0.55); border:1px solid rgba(242,235,220,0.5); padding:10px 20px; border-radius:999px; cursor:pointer;">Saltar →</button>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <!-- HERO -->
+  <section style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 24px; box-sizing:border-box;">
+    <img src="assets/illustrations/wedding-rings-2k.jpeg" alt="" style="width:min(140px,36vw); margin-bottom:24px; mix-blend-mode:multiply; opacity:0.85;">
+    <div style="font-family:'Mulish',sans-serif; font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#F28B50; font-weight:800; margin-bottom:16px;">Nos casamos</div>
+    <h1 style="font-family:'Lora',serif; font-size:clamp(48px,8vw,96px); color:#59562C; margin:0; line-height:1.1;">Juli &amp; Bruno</h1>
+    <p style="font-family:'Lora',serif; font-style:italic; font-size:clamp(18px,4vw,26px); color:#71734D; margin:16px 0 48px;">1 de noviembre, 2026 · 17:00 hs</p>
+    <img src="assets/illustrations/couple-with-dogs-lineart-transparent.png" alt="Ilustración de Juli y Bruno con sus perros" style="width:min(300px,55vw); margin-bottom:16px;">
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section style="background:#59562C; padding:64px 24px; box-sizing:border-box; text-align:center;">
+    <div style="font-family:'Mulish',sans-serif; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:#F2B4AE; font-weight:600; margin-bottom:12px;">Cuenta regresiva</div>
+    <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap;">
+      <sc-for list="{{ countdownUnits }}" as="unit" hint-placeholder-count="4">
+        <div style="min-width:88px; background:#71734D; border-radius:12px; padding:16px 12px;">
+          <div style="font-family:'Lora',serif; font-size:40px; color:#F2EBDC; line-height:1;">{{ unit.value }}</div>
+          <div style="font-family:'Mulish',sans-serif; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#D9C99A; margin-top:6px;">{{ unit.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- POEMA -->
+  <section style="padding:96px 24px; box-sizing:border-box; text-align:center;">
+    <div style="max-width:640px; margin:0 auto;">
+      <div style="font-family:'Mulish',sans-serif; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:#F28B50; font-weight:600; margin-bottom:16px;">Un poema para arrancar</div>
+      <p style="font-family:'Mulish',sans-serif; font-size:16px; color:#71734D; margin:0 0 40px;">Esto va a ser bien romántico, tomá.</p>
+      <p style="font-family:'Lora',serif; font-style:italic; font-size:clamp(22px,3.2vw,32px); color:#59562C; line-height:1.5; margin:0 0 24px;">"Castigáis el amor y lo único que conseguís son rebeldes con el corazón por bandera".</p>
+      <p style="font-family:'Caveat',cursive; font-size:28px; color:#F28B50; margin:0;">— Elvira Sastre, Aquella orilla nuestra</p>
+    </div>
+  </section>
+
+  <!-- ESENCIALES -->
+  <section style="background:#59562C; padding:96px 24px; box-sizing:border-box;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="font-family:'Mulish',sans-serif; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:#F2B4AE; font-weight:600; margin-bottom:12px; text-align:center;">Antes de que preguntes</div>
+      <h2 style="font-family:'Lora',serif; font-size:36px; color:#F2EBDC; margin:0 0 40px; text-align:center;">Para tener en cuenta</h2>
+
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span style="color:#F28B50; font-size:20px; line-height:1;">—</span>
+          <p style="font-family:'Mulish',sans-serif; font-size:clamp(15px,3.5vw,18px); color:#F2EBDC; margin:0; line-height:1.6;">De blanco, solo la novia.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span style="color:#F28B50; font-size:20px; line-height:1;">—</span>
+          <p style="font-family:'Mulish',sans-serif; font-size:clamp(15px,3.5vw,18px); color:#F2EBDC; margin:0; line-height:1.6;">El evento arranca a las 17 hs y termina a las 22 hs.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span style="color:#F28B50; font-size:20px; line-height:1;">—</span>
+          <p style="font-family:'Mulish',sans-serif; font-size:clamp(15px,3.5vw,18px); color:#F2EBDC; margin:0; line-height:1.6;">Vestimenta: nada de boludeces, va de traje y vestido.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span style="color:#F28B50; font-size:20px; line-height:1;">—</span>
+          <p style="font-family:'Mulish',sans-serif; font-size:clamp(15px,3.5vw,18px); color:#F2EBDC; margin:0; line-height:1.6;">La comida es completa, no un aperitivo — vengan con hambre.</p>
+        </div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span style="color:#F28B50; font-size:20px; line-height:1;">—</span>
+          <p style="font-family:'Mulish',sans-serif; font-size:clamp(15px,3.5vw,18px); color:#F2EBDC; margin:0; line-height:1.6;">La invitación es sin acompañantes, salvo que te avisemos lo contrario: necesitamos saber cuánta gente viene de Tucumán, Pigüé, Bahía Blanca y Neuquén, que es una logística particular antes de cerrar ese tema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATE, ADDRESS, GIFT, DRESS CODE -->
+  <section style="padding:96px 24px; box-sizing:border-box;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <x-import component-from-global-scope="JuliBrunoWeddingDesignSystem_ae1f24.SectionHeading" eyebrow="Detalles" title="Todo lo que necesitás saber" hint-size="100%,90px"></x-import>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; margin-top:32px;">
+
+        <!-- Fecha y hora -->
+        <div style="background:#fff; border:1px solid #D9C99A; border-radius:20px; padding:24px; box-shadow:0 1px 3px rgba(89,86,44,0.08);">
+          <div style="font-family:'Mulish',sans-serif; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:#71734D; font-weight:600; margin-bottom:8px;">Fecha y hora</div>
+          <h3 style="font-family:'Lora',serif; font-size:26px; color:#59562C; margin:0 0 8px;">Domingo 1 de noviembre</h3>
+          <p style="font-family:'Mulish',sans-serif; font-size:18px; color:#73604F; margin:0;">17:00 hs — te esperamos puntual.</p>
+        </div>
+
+        <!-- Direccion -->
+        <div style="background:#fff; border:1px solid #D9C99A; border-radius:20px; padding:24px; box-shadow:0 1px 3px rgba(89,86,44,0.08);">
+          <div style="font-family:'Mulish',sans-serif; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:#71734D; font-weight:600; margin-bottom:8px;">Ubicación</div>
+          <h3 style="font-family:'Lora',serif; font-size:26px; color:#59562C; margin:0 0 8px;">Águila Pabellón</h3>
+          <p style="font-family:'Mulish',sans-serif; font-size:18px; color:#73604F; margin:0 0 16px;">Av. Sarmiento 2725, Palermo</p>
+          <a href="https://maps.app.goo.gl/3KeYoqdy9AhbfuUs5" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-family:'Mulish',sans-serif; font-weight:600; color:#F28B50; text-decoration:none; padding:10px 20px; border:1.5px solid #F28B50; border-radius:12px;">Ver en Google Maps →</a>
+        </div>
+
+        <!-- Regalo -->
+        <div style="background:#fff; border:1px solid #D9C99A; border-radius:20px; padding:24px; box-shadow:0 1px 3px rgba(89,86,44,0.08);">
+          <div style="font-family:'Mulish',sans-serif; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:#71734D; font-weight:600; margin-bottom:8px;">Regalo</div>
+          <h3 style="font-family:'Lora',serif; font-size:26px; color:#59562C; margin:0 0 8px;">Si nos querés hacer un regalo…</h3>
+          <p style="font-family:'Mulish',sans-serif; font-size:16px; color:#73604F; margin:0 0 6px; line-height:1.6;">Alias: <strong>casamientojulibruno</strong></p>
+          <p style="font-family:'Mulish',sans-serif; font-size:14px; color:#73604F; margin:0; line-height:1.6;">A nombre de Juliana Gomez Rios</p>
+        </div>
+
+        <!-- Codigo de vestimenta -->
+        <div style="background:#fff; border:1px solid #D9C99A; border-radius:20px; padding:24px; box-shadow:0 1px 3px rgba(89,86,44,0.08);">
+          <div style="font-family:'Mulish',sans-serif; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:#71734D; font-weight:600; margin-bottom:8px;">Código de vestimenta</div>
+          <h3 style="font-family:'Lora',serif; font-size:26px; color:#59562C; margin:0 0 12px;">Elegante</h3>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <div style="width:36px; height:36px; border-radius:999px; border:2px solid #fff; box-shadow:0 0 0 1px #D9C99A; background:#A6A160;"></div>
+            <div style="width:36px; height:36px; border-radius:999px; border:2px solid #fff; box-shadow:0 0 0 1px #D9C99A; background:#F28B50;"></div>
+            <div style="width:36px; height:36px; border-radius:999px; border:2px solid #fff; box-shadow:0 0 0 1px #D9C99A; background:#F2B4AE;"></div>
+            <div style="width:36px; height:36px; border-radius:999px; border:2px solid #fff; box-shadow:0 0 0 1px #D9C99A; background:#A66D8C;"></div>
+            <div style="width:36px; height:36px; border-radius:999px; border:2px solid #fff; box-shadow:0 0 0 1px #D9C99A; background:#D9C99A;"></div>
+            <div style="width:36px; height:36px; border-radius:999px; border:2px solid #fff; box-shadow:0 0 0 1px #D9C99A; background:#5E5C2D;"></div>
+            <div style="width:36px; height:36px; border-radius:999px; border:2px solid #fff; box-shadow:0 0 0 1px #D9C99A; background:#553E2A;"></div>
+          </div>
+          <p style="font-family:'Mulish',sans-serif; font-size:14px; color:#71734D; margin:12px 0 0;">Evitá el blanco — el resto, libre.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section style="background:#59562C; padding:80px 24px; box-sizing:border-box; text-align:center;">
+    <div style="max-width:480px; margin:0 auto;">
+      <div style="font-family:'Mulish',sans-serif; font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:#F2B4AE; font-weight:600; margin-bottom:12px;">Es importante para nosotros, no seas corneta y contestá rápido</div>
+      <h2 style="font-family:'Lora',serif; font-size:36px; color:#F2EBDC; margin:0 0 12px;">Confirmá tu lugar</h2>
+      <p style="font-family:'Mulish',sans-serif; font-size:18px; color:#D9C99A; margin:0 0 24px;">Necesitamos tu confirmación antes del <strong style="color:#F2EBDC;">15 de agosto</strong>.</p>
+      <div style="display:flex; flex-direction:column; gap:14px; width:100%; max-width:360px; margin:0 auto;">
+        <a href="https://wa.me/5491167331678?text=Hola%20Juli.%20Vi%20la%20invitaci%C3%B3n%20y%20quer%C3%ADa%20confirmarte%20que%20voy%20a%20ir.%20Muchas%20gracias." target="_blank" rel="noopener" style="display:block; box-sizing:border-box; font-family:'Mulish',sans-serif; font-weight:700; font-size:18px; color:#fff; background:#F28B50; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center;">Confirmarle a Juli</a>
+        <a href="https://wa.me/5492923698093?text=Hola%21%20vi%20la%20p%C3%A1gina%20del%20casamiento%20y%20estoy%20adentro.%20Vamo%20arriba%20nom%C3%A1s" target="_blank" rel="noopener" style="display:block; box-sizing:border-box; font-family:'Mulish',sans-serif; font-weight:700; font-size:18px; color:#F28B50; background:transparent; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; border:2px solid #F28B50;">Confirmarle a Bruno</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#71734D; color:#F2EBDC; text-align:center; padding:32px 24px; font-family:'Mulish',sans-serif; font-size:14px;">
+    Juli &amp; Bruno · 1 de noviembre de 2026
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { now: Date.now(), opening: false, closing: false, hidden: false };
+  videoEl = null;
+
+  componentDidMount() {
+    this._t = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    let seen = false;
+    try { seen = !!sessionStorage.getItem('juliBrunoIntroSeen'); } catch (e) {}
+    if (seen) this.setState({ hidden: true });
+  }
+  componentWillUnmount() {
+    clearInterval(this._t);
+  }
+
+  setVideoRef = (el) => { this.videoEl = el; };
+
+  onOpen = () => {
+    this.setState({ opening: true });
+    if (this.videoEl) {
+      this.videoEl.currentTime = 0;
+      const p = this.videoEl.play();
+      if (p && p.catch) p.catch(() => this.finishIntro());
+    }
+  };
+
+  onVideoEnd = () => { this.finishIntro(); };
+  onSkip = () => { this.finishIntro(); };
+
+  finishIntro() {
+    try { sessionStorage.setItem('juliBrunoIntroSeen', '1'); } catch (e) {}
+    this.setState({ closing: true });
+    setTimeout(() => this.setState({ hidden: true }), 900);
+  }
+
+  renderVals() {
+    const target = new Date('2026-11-01T17:00:00').getTime();
+    let diff = Math.max(0, target - this.state.now);
+    const days = Math.floor(diff / 86400000); diff -= days * 86400000;
+    const hours = Math.floor(diff / 3600000); diff -= hours * 3600000;
+    const mins = Math.floor(diff / 60000); diff -= mins * 60000;
+    const secs = Math.floor(diff / 1000);
+
+    const pad = (n) => String(n).padStart(2, '0');
+
+    return {
+      countdownUnits: [
+        { label: 'Días', value: String(days) },
+        { label: 'Horas', value: pad(hours) },
+        { label: 'Min', value: pad(mins) },
+        { label: 'Seg', value: pad(secs) },
+      ],
+      showOverlay: !this.state.hidden,
+      overlayOpacity: this.state.closing ? 0 : 1,
+      videoOpacity: this.state.opening ? 1 : 0,
+      introContentOpacity: this.state.opening ? 0 : 1,
+      introPointerEvents: this.state.opening ? 'none' : 'auto',
+      opening: this.state.opening,
+      setVideoRef: this.setVideoRef,
+      onOpen: this.onOpen,
+      onVideoEnd: this.onVideoEnd,
+      onSkip: this.onSkip,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

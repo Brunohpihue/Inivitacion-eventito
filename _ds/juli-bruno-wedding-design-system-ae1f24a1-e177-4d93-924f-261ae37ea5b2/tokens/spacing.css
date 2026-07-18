@@ -1,0 +1,42 @@
+/* ==========================================================================
+   SPACING, RADIUS, SHADOW & MOTION TOKENS
+   ========================================================================== */
+
+:root {
+  /* spacing — 4px base scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* radius — soft, hand-finished, never sharp, never pill-everything */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* shadow — low-contrast, warm-tinted (never cool gray) */
+  --shadow-sm: 0 1px 3px rgba(89, 86, 44, 0.08);
+  --shadow-md: 0 6px 20px rgba(89, 86, 44, 0.12);
+  --shadow-lg: 0 16px 40px rgba(89, 86, 44, 0.16);
+
+  /* borders */
+  --border-width-sm: 1px;
+  --border-width-md: 1.5px;
+
+  /* motion — gentle, unhurried; nothing bouncy or springy */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --duration-fast: 150ms; /* @kind other */
+  --duration-normal: 280ms; /* @kind other */
+  --duration-slow: 480ms; /* @kind other */
+
+  /* content measure */
+  --measure-narrow: 42ch;
+  --measure-normal: 62ch;
+}

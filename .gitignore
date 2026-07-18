@@ -1,0 +1,12 @@
+# Entorno e IDE local
+.claude/
+.thumbnail
+.DS_Store
+*.zip
+
+# Archivos pesados de trabajo y bocetos
+uploads/
+
+# Documentación interna de diseño
+_ds/**/readme.md
+_ds/**/_adherence.oxlintrc.json

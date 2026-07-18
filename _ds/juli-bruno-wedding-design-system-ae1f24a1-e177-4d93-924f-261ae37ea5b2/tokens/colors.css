@@ -1,0 +1,49 @@
+/* ==========================================================================
+   COLOR TOKENS — Juli & Bruno, "Bosque de Hadas"
+   Palette pulled directly from the couple's supplied brand board.
+   Base hexes first, then semantic aliases consumers should actually use.
+   ========================================================================== */
+
+:root {
+  /* ---- base palette (from brand board, do not rename hexes) ---- */
+  --color-moss-500: #A6A160;   /* primary olive/moss green */
+  --color-moss-600: #A69A5D;   /* moss, slightly warmer */
+  --color-moss-700: #71734D;   /* deep moss */
+  --color-moss-900: #59562C;   /* darkest forest olive — headline ink */
+
+  --color-coral-500: #F28B50;  /* playful accent — links, highlights */
+  --color-blush-400: #F2B4AE;  /* soft romantic pink */
+  --color-plum-500:  #A66D8C;  /* mauve/plum — secondary accent */
+
+  --color-umber-600: #73604F;  /* warm brown — body text alt, wood tones */
+
+  --color-paper-50:  #F2EBDC;  /* cream paper — primary background */
+  --color-sand-200:  #D9C99A;  /* warm sand — secondary surface / borders */
+
+  /* ---- semantic aliases ---- */
+  --bg-page:            var(--color-paper-50);
+  --bg-surface:         #FFFFFF;
+  --bg-surface-sunken:  var(--color-sand-200);
+  --bg-surface-accent:  var(--color-moss-900);
+
+  --text-heading:  var(--color-moss-900);
+  --text-body:     var(--color-umber-600);
+  --text-muted:    var(--color-moss-700);
+  --text-inverse:  var(--color-paper-50);
+  --text-link:     var(--color-coral-500);
+  --text-link-hover: var(--color-plum-500);
+
+  --border-subtle:  var(--color-sand-200);
+  --border-strong:  var(--color-moss-700);
+
+  --accent-primary:    var(--color-moss-500);
+  --accent-secondary:  var(--color-coral-500);
+  --accent-tertiary:   var(--color-plum-500);
+  --accent-soft:       var(--color-blush-400);
+
+  --state-success: var(--color-moss-600);
+  --state-hold:    var(--color-blush-400);
+  --state-info:    var(--color-plum-500);
+
+  --focus-ring: var(--color-coral-500);
+}
