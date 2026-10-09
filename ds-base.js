@@ -3,7 +3,9 @@
 // the project root, '../_ds/<folder>' one level down) — one line to edit.
 (() => {
   const base = '_ds/juli-bruno-wedding-design-system-ae1f24a1-e177-4d93-924f-261ae37ea5b2';
-  for (const p of ["tokens/fonts.css","tokens/colors.css","tokens/typography.css","tokens/spacing.css","styles.css"]) {
+  // Las tipografías ya se cargan con <link> en index.html; styles.css solo re-importa
+  // estos mismos tokens, así que se cargan directo para evitar pedidos duplicados.
+  for (const p of ["tokens/colors.css","tokens/typography.css","tokens/spacing.css"]) {
     const l = document.createElement('link');
     l.rel = 'stylesheet'; l.href = base + '/' + p;
     document.head.appendChild(l);

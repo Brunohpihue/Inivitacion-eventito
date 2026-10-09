@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Juli y Bruno//Casamiento//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:misa-20261101@juliybruno
+DTSTAMP:20261009T000000Z
+DTSTART:20261101T180000Z
+DTEND:20261101T190000Z
+SUMMARY:Misa · Casamiento Juli & Bruno
+LOCATION:Parroquia Sagrada Eucaristía\, Av. Santa Fe 4320\, Palermo\, CABA
+DESCRIPTION:15:00 hs puntual. Después nos vemos en Águila Pabellón a las 17:00.\nhttps://brunohpihue.github.io/Inivitacion-eventito/
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Misa · Casamiento Juli & Bruno
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fiesta-20261101@juliybruno
+DTSTAMP:20261009T000000Z
+DTSTART:20261101T200000Z
+DTEND:20261102T010000Z
+SUMMARY:Civil y fiesta · Casamiento Juli & Bruno
+LOCATION:Águila Pabellón\, Av. Sarmiento 2725\, Palermo\, CABA
+DESCRIPTION:17:00 civil en el salón · 18:00 a 22:00 fiesta.\nhttps://brunohpihue.github.io/Inivitacion-eventito/
+END:VEVENT
+END:VCALENDAR
