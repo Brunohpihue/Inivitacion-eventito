@@ -45,6 +45,17 @@
     <!-- @template name="Wedding Landing Page" description="Full one-page wedding site: hero, countdown, date, address, gift info, dress code, RSVP" -->
     <helmet>
       <script src="./ds-base.js"></script>
+      <style>
+        @keyframes pulseBtn {
+          0% { box-shadow: 0 0 0 0 rgba(242,235,220,0.5); }
+          70% { box-shadow: 0 0 0 20px rgba(242,235,220,0); }
+          100% { box-shadow: 0 0 0 0 rgba(242,235,220,0); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      </style>
     </helmet>
 
     <div style="background:#F2EBDC; min-height:100vh; position:relative;">
@@ -52,10 +63,10 @@
       <!-- INTRO: apertura sin video -->
       <sc-if value="{{ showOverlay }}" hint-placeholder-val="{{ true }}">
         <div
-          style="position:fixed; inset:0; z-index:9999; background:#59562C; display:flex; align-items:center; justify-content:center; overflow:hidden; transition:opacity 0.9s ease; opacity:{{ overlayOpacity }};">
+          style="position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; overflow:hidden; transition:opacity 0.9s ease; opacity:{{ overlayOpacity }}; background-color:#59562C; background-image:url('assets/illustrations/wedding-rings-2k.jpeg'); background-size:cover; background-position:center; background-blend-mode:multiply;">
 
           <div
-            style="position:relative; z-index:2; text-align:center; padding:24px; transition:opacity 0.5s ease; opacity:{{ introContentOpacity }}; pointer-events:{{ introPointerEvents }};">
+            style="position:relative; z-index:2; text-align:center; padding:24px; transition:opacity 0.5s ease; opacity:{{ introContentOpacity }}; pointer-events:{{ introPointerEvents }}; animation: fadeInUp 1s ease-out;">
             <img src="assets/illustrations/wedding-rings-lineart.png" alt=""
               style="width:64px; margin-bottom:20px; filter:brightness(0) invert(1); opacity:0.85;">
             <div
@@ -65,7 +76,7 @@
               style="font-family:'Lora',serif; font-size:clamp(40px,7vw,72px); color:#F2EBDC; margin:0 0 32px; line-height:1.1;">
               Juli &amp; Bruno</h1>
             <button onClick="{{ onOpen }}"
-              style="font-family:'Mulish',sans-serif; font-weight:700; font-size:16px; color:#59562C; background:#F2EBDC; padding:16px 40px; border-radius:999px; border:none; cursor:pointer; letter-spacing:0.02em;">Hay
+              style="font-family:'Mulish',sans-serif; font-weight:700; font-size:16px; color:#59562C; background:#F2EBDC; padding:16px 40px; border-radius:999px; border:none; cursor:pointer; letter-spacing:0.02em; animation: pulseBtn 2s infinite;">Hay
               novedades</button>
           </div>
 
@@ -129,7 +140,7 @@
             <h3 style="font-family:'Lora',serif; font-size:32px; color:#59562C; margin:0; display:flex; align-items:center; gap:16px;">
               <span style="color:#F28B50; font-weight:700;">15:00 hs</span> Misa en la Iglesia
             </h3>
-            <img src="assets/illustrations/iglesia.jpg" alt="Iglesia" style="width:100%; max-width:400px; margin:0 auto; border-radius:16px; border:2px solid #59562C; mix-blend-mode:multiply;">
+            <img src="assets/illustrations/iglesia1.png" alt="Iglesia" style="width:100%; max-width:400px; margin:0 auto; border-radius:16px; border:2px solid #59562C;">
             <p style="font-family:'Mulish',sans-serif; font-size:18px; color:#73604F; margin:0; line-height:1.6;">
               Misa, nos tiramos arroz, nos damos unos besos, nos tiramos unos dichos ("El que se casa, por todo pasa") etc etc. Luego, mientras nos vamos a sacar fotos, vemos los últimos 15' del superclásico en el celu.
             </p>
@@ -140,7 +151,7 @@
             <h3 style="font-family:'Lora',serif; font-size:32px; color:#59562C; margin:0; display:flex; align-items:center; gap:16px;">
               <span style="color:#F28B50; font-weight:700;">17:00 hs</span> Águila Pabellón
             </h3>
-            <img src="assets/illustrations/aguila_pabellon.jpg" alt="Salón Águila Pabellón" style="width:100%; max-width:400px; margin:0 auto; border-radius:16px; border:2px solid #59562C; mix-blend-mode:multiply;">
+            <img src="uploads/casamiento 2-6.png" alt="Salón Águila Pabellón" style="width:100%; max-width:400px; margin:0 auto; border-radius:16px; border:2px solid #59562C;">
             <div style="font-family:'Mulish',sans-serif; font-size:18px; color:#73604F; margin:0; line-height:1.6;">
               <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:12px;">
                 <li><strong>17:00 hs - 18:00 hs:</strong> Ceremonia del casamiento civil en el salón.</li>
