@@ -209,6 +209,7 @@
         .ico-copy { --m: url('assets/icons/copy.svg'); }
         .ico-check { --m: url('assets/icons/check.svg'); }
         .ico-pin { --m: url('assets/icons/pin.svg'); }
+        .ico-car { --m: url('assets/icons/car.svg'); }
         .mask-sprig { --m: url('assets/ornaments/sprig.svg'); -webkit-mask: var(--m) center / contain no-repeat; mask: var(--m) center / contain no-repeat; }
 
         /* Aparición al hacer scroll (solo si JS lo habilita y sin "reducir movimiento") */
@@ -281,7 +282,8 @@
         .tl-text p:last-child { margin: 0; }
 
         /* ---------- PARA TENER EN CUENTA ---------- */
-        .tips { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px 28px; }
+        .tips { display: grid; grid-template-columns: 1fr; gap: 32px 40px; max-width: 640px; margin: 0 auto; }
+        @media (min-width: 600px) { .tips { grid-template-columns: repeat(2, 1fr); } }
         .tip { text-align: center; }
         .tip-icon {
           width: 60px; height: 60px; margin: 0 auto 16px; border-radius: 50%;
@@ -291,7 +293,7 @@
         .tip p { font-family: 'Mulish', sans-serif; font-size: 17px; color: var(--paper); margin: 0; line-height: 1.6; }
 
         /* ---------- DETALLES ---------- */
-        .cards { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        .cards { display: grid; grid-template-columns: 1fr; grid-auto-flow: row dense; gap: 24px; }
         @media (min-width: 760px) { .cards { grid-template-columns: repeat(2, 1fr); } }
         .card {
           background: #fff; border: 1px solid var(--sand); border-radius: 20px; padding: 28px;
@@ -302,6 +304,20 @@
         .card-text { font-family: 'Mulish', sans-serif; font-size: 16px; color: var(--umber); margin: 0; line-height: 1.6; }
         .card-note { font-family: 'Mulish', sans-serif; font-size: 14px; color: var(--moss); margin: 4px 0 0; }
         .card-sep { border: none; border-top: 1px dashed var(--sand); margin: 20px 0; }
+        /* Aviso de estacionamiento: ocupa todo el ancho de la grilla */
+        .notice {
+          grid-column: 1 / -1; display: flex; gap: 20px; align-items: flex-start;
+          background: #FBF1EE; border: 1px solid var(--blush); border-radius: 20px; padding: 28px;
+          box-shadow: 0 6px 20px rgba(89, 86, 44, 0.08);
+        }
+        .notice-icon {
+          flex: none; width: 52px; height: 52px; border-radius: 50%; background: var(--paper);
+          border: 1px solid var(--blush); display: flex; align-items: center; justify-content: center;
+          color: var(--plum); font-size: 24px;
+        }
+        .notice .card-kicker { color: var(--plum); }
+        .notice-ref { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--blush); }
+        @media (max-width: 480px) { .notice { flex-direction: column; gap: 14px; padding: 24px 22px; } }
         .place + .place { margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--sand); }
         .place-time { font-family: 'Mulish', sans-serif; font-size: 13px; font-weight: 700; color: var(--coral); letter-spacing: 0.08em; }
         .place-name { font-family: 'Lora', serif; font-weight: 500; font-size: 21px; color: var(--olive); margin: 2px 0 4px; }
@@ -510,6 +526,10 @@
               <div class="tip-icon"><span class="ico ico-chat"></span></div>
               <p>Si hay algún problema logístico nos lo hacen saber.</p>
             </div>
+            <div class="tip reveal">
+              <div class="tip-icon"><span class="ico ico-car"></span></div>
+              <p>Hay barra libre y estacionar por la zona no es fácil: dentro de lo posible, vengan en Uber.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -540,6 +560,20 @@
                 <div class="place-name">Águila Pabellón</div>
                 <p class="card-text">Av. Sarmiento 2725, Palermo</p>
                 <a class="link" href="https://maps.app.goo.gl/3KeYoqdy9AhbfuUs5" target="_blank" rel="noopener"><span class="ico ico-pin"></span>Ver en Google Maps →</a>
+              </div>
+            </div>
+
+            <!-- Estacionamiento -->
+            <div class="notice reveal">
+              <div class="notice-icon"><span class="ico ico-car"></span></div>
+              <div>
+                <div class="card-kicker">Cómo llegar · Estacionamiento</div>
+                <h3 class="card-title">Te recomendamos ir en Uber</h3>
+                <p class="card-text">No hay estacionamiento pactado y la zona no es fácil para estacionar. Nuestra recomendación, dentro de las posibilidades, es ir en Uber: hay barra libre.</p>
+                <div class="notice-ref">
+                  <p class="card-text">Como referencia, hay un estacionamiento privado en <strong>Av. Santa Fe 3956, Palermo</strong>, a unas cuadras de la parroquia. No tenemos ningún acuerdo con ellos.</p>
+                  <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Santa+Fe+3956,+C1425BHB,+Ciudad+Aut%C3%B3noma+de+Buenos+Aires" target="_blank" rel="noopener"><span class="ico ico-pin"></span>Ver en Google Maps →</a>
+                </div>
               </div>
             </div>
 
